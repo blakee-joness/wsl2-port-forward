@@ -51,8 +51,8 @@ foreach ( $protocol in @("TCP", "UDP") ) {
   Remove-NetFirewallRule -DisplayName "($protocol) Docker Inbound AutoPortFoward" 
   Remove-NetFirewallRule -DisplayName "($protocol) Docker Outbound AutoPortFoward" 
   $ErrorActionPreference = "Continue"
-  New-NetFirewallRule -DisplayName "($protocol) Docker Inbound AutoPortFoward" -LocalPort $ports -Action Allow -Description "Inbound Rule for: $ports (Created by script: $script_location)" -Profile "Any" -Protocol $prot -Direction Inbound
-  New-NetFirewallRule -DisplayName "($protocol) Docker Outbound AutoPortFoward" -LocalPort $ports -Action Allow -Description "Outbound Rule for: $ports (Created by script: $script_location)" -Profile "Any" -Protocol $prot -Direction Outbound
+  New-NetFirewallRule -DisplayName "($protocol) Docker Inbound AutoPortFoward" -LocalPort $ports -Action Allow -Description "Inbound Rule for: $ports (Created by script: $script_location)" -Profile "Any" -Protocol $protocol -Direction Inbound
+  New-NetFirewallRule -DisplayName "($protocol) Docker Outbound AutoPortFoward" -LocalPort $ports -Action Allow -Description "Outbound Rule for: $ports (Created by script: $script_location)" -Profile "Any" -Protocol $protocol -Direction Outbound
 }
 
 Invoke-Expression "netsh interface portproxy show v4tov4";
