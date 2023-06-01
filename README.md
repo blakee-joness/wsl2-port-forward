@@ -20,7 +20,7 @@ The script does the following:
    - netsh interface portproxy add v4tov4 listenport=`$port` connectport=`$port` connectaddress=`$remoteport`
  - Creates Windows Firewall rules 
    - Inbound TCP/UDP for each ports specified in the `$ports` variable.
-   - Inbound TCP/UDP for each ports specified in the `$ports` variable.
+   - Outbound TCP/UDP for each ports specified in the `$ports` variable.
 
 ## Prerequisites
 ### ```You must run this script in an Admin PowerShell terminal.```
