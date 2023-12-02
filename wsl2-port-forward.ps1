@@ -13,7 +13,7 @@
 
         - Outbound Firewall Rules
           - Firewall Rule #3 will allow and enable Outbound TCP Traffic based on the port list provided.
-          - Firewall Rule #4 will allow and enable Outbound TCP Traffic based on the port list provided.
+          - Firewall Rule #4 will allow and enable Outbound UDP Traffic based on the port list provided.
 
 #>
 
