@@ -26,7 +26,7 @@ If (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
   Break
 }
 
-$remoteport = bash.exe -c "ifconfig eth0 | grep 'inet '"
+$remoteport = ((wsl hostname -I) -split " ")[0]
 $found = $remoteport -match '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}';
 
 if ( $found ) {
